@@ -3,15 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations' 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { MyhttpInterceptor } from './interceptors/myhttp.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -20,6 +21,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:MyhttpInterceptor,multi:true},

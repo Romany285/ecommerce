@@ -39,26 +39,26 @@ export class RegisterComponent {
     const userData = this.registerForm.value
     this.isLoading = true
     if(this.registerForm.valid){
-      
+
       this._AuthService.setRegister(userData).subscribe({
         next:(responce)=>{
           if(responce.message == 'success'){
             this.isLoading = false
             this._Router.navigate(['/login'])
           }
-          
-          
+
+
           console.log(responce)
         },
         error:(err)=>{
           this.errMsg = err.error.message;
           this.isLoading = false
-          
+
           console.log(err)
         }
       })
         console.log(this.registerForm.value)
      }
     }
-    
+
 }

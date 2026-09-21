@@ -2,14 +2,14 @@
     <div class="row d-flex align-items-center">
         <div class="col-3">
             <owl-carousel-o [options]="detailsOptions">
-    
+
                 <ng-container *ngFor="let item of productDetails.images">
                   <ng-template carouselSlide [id]="item.id">
                     <img [src]="item" [alt]="item.alt"  class="w-100">
                     <p> {{item.title}} </p>
                   </ng-template>
                 </ng-container>
-            
+
               </owl-carousel-o>
         </div>
         <div class="col-9">
@@ -23,5 +23,5 @@
             <button #element (click)="addProduct(productDetails._id,element)" class="main-btn w-100  my-3">+Add To Cart</button>
         </div>
     </div>
-    
+
 </section>
